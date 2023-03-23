@@ -11,11 +11,16 @@ $cursor: pointer;
 color: red;
 }
 
-.contExt{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+body {
+
+  font-family:  Arial, Helvetica, sans-serif;
+  background-color: #EEF0F7;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+>>>>>>> feature/#2
 }
 
 .container {
@@ -85,6 +90,16 @@ color: red;
       margin-top: -10px !important;
       color: red;
       font-size: 12px;
+    }
+
+    .form-check{
+      display: grid;
+      grid-template-columns: 0fr 1fr;
+      align-items: start;
+      input{
+        margin-right: 5px;
+      }
+
     }
   }
 }
