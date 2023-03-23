@@ -1,7 +1,7 @@
 
-<form (ngSubmit)="calculate()" [formGroup]="myForm" class="containerOut">
+<form (ngSubmit)="calculate()" [formGroup]="myForm" class="conExt">
+
   <div class="container">
-    <div class="container-close">&times;</div>
     <img
       src="https://st2.depositphotos.com/3246347/6806/i/950/depositphotos_68065665-stock-photo-money-stacks-of-euros.jpg"
       alt="image"
@@ -43,4 +43,6 @@
       <p *ngIf="this.result">{{this.result}}€</p>
     </div>
   </div>
+
 </form>
+

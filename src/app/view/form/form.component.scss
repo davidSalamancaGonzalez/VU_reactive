@@ -19,37 +19,20 @@ body {
   place-items: center;
   min-height: 100vh;
   overflow: hidden;
-}
+
+
 
 .container {
   background-color: $primary-color;
   width: 600px;
   height: 450px;
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
   border-radius: 10px;
   line-height: 1.5;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
-
-  &-close {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    background-color: $primary-color;
-    width: 45px;
-    height: 45px;
-    display: grid;
-    place-items: center;
-    font-size: 1.7rem;
-    color: #2E4052;
-    border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.164);
-    cursor: $cursor;
-  }
-
-
+  overflow: hidden;
   img {
     width: 250px;
     height: 400px;
