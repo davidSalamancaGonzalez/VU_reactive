@@ -20,7 +20,7 @@ export class ResultService {
   }
 
   irpfSpain(taxbase: number) {
-    console.log(taxbase);
+
     let total: number = 0;
     if (taxbase <= 12450) {
       total = this.amountPlan * (19 / 100);
@@ -40,14 +40,15 @@ export class ResultService {
   }
 
   irpfAndorra(taxbase: number) {
+
     let total: number = 0;
-    if (taxbase <= 240000) {
-      total = this.amountPlan;
-    } else if (taxbase >= 240000 && taxbase <= 400000) {
+
+    if ( taxbase >= 24000 && taxbase <= 40000) {
       total = this.amountPlan * (5 / 100);
-    } else if (taxbase >= 400000) {
+    } else if (taxbase >= 40000) {
       total = this.amountPlan * (10 / 100);
     }
+    console.log('total',total)
     return total;
   }
 }
