@@ -32,7 +32,7 @@ export class FormComponent {
 
   validField(field: string) {
     return (
-      this.myForm.controls[field].errors && this.myForm.controls[field].touched
+      this.myForm.controls[field].errors && this.myForm.controls[field].touched && this.myForm.controls[field].valueChanges
     );
   }
 

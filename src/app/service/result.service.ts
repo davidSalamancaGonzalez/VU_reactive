@@ -42,8 +42,10 @@ export class ResultService {
   irpfAndorra(taxbase: number) {
 
     let total: number = 0;
-
-    if ( taxbase >= 24000 && taxbase <= 40000) {
+    if(taxbase <= 24000){
+      total = 0
+    }
+    else if ( taxbase >= 24000 && taxbase <= 40000) {
       total = this.amountPlan * (5 / 100);
     } else if (taxbase >= 40000) {
       total = this.amountPlan * (10 / 100);
