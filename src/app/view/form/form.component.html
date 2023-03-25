@@ -7,40 +7,37 @@
       alt="image"
     />
     <div class="container-text">
-      <h2>Calculate your tax deduction</h2>
-      <p>
-        Income tax deduction for a pension plan.
-      </p>
+      <h2 class="mb-3">Pension plan tax deduction calculator.</h2>
+
       <input type="number" formControlName="taxBase" placeholder="Annual income"/>
       <span *ngIf="validField('taxBase')" class="danger">Anual income should be 1€ or more</span>
       <input type="number" formControlName="pensionPlan" placeholder="Plan persona física"/>
       <span *ngIf="validField('pensionPlan')">Maximum allowed income 1500</span>
       <input type="number" formControlName="pensionPlanComp" placeholder="Plan empresa"/>
       <span *ngIf="validField('pensionPlanComp')">Maximum allowed income 8500</span>
-      <div class="d-flex">
+      <div class="d-flex ">
         <div class="form-check">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input"
-                   type="radio"
+          <div class="form-check ">
+            <input type="radio"
                    formControlName="inlineRadioOptions"
                    name="inlineRadioOptions"
                    id="inlineRadio1"
                    value="ESP">
-            <label class="form-check-label" for="inlineRadio1">SPAIN</label>
+            <label class="form-check-label me-4" for="inlineRadio1">SPAIN</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input"
-                   type="radio"
+            <input type="radio"
                    formControlName="inlineRadioOptions"
                    name="inlineRadioOptions"
                    id="inlineRadio2"
                    value="AND">
-            <label class="form-check-label" for="inlineRadio2">ANDORRA</label>
+            <label class="form-check-label">ANDORRA</label>
           </div>
         </div>
       </div>
+      <span *ngIf="validField('inlineRadioOptions')" class="country">Please select a country</span>
       <button type="submit">Calculate</button>
-      <p *ngIf="this.result">{{this.result}}€</p>
+      <p *ngIf="this.result" class="result">{{this.result}}€</p>
     </div>
   </div>
 

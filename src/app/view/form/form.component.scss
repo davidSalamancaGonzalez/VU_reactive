@@ -23,6 +23,7 @@ body {
 }
 
 .container {
+  margin-top: 25vh;
   background-color: $primary-color;
   width: 600px;
   height: 450px;
@@ -46,12 +47,13 @@ body {
     text-align: center;
 
     h2 {
-      font-size: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
       color: #1A2250;
     }
 
     p {
-      font-size: 12px;
+      font-size: 18px;
       color: #3B4169;
       margin: 10px 0;
     }
@@ -85,12 +87,18 @@ body {
       box-shadow: none;
     }
 
+
     span {
       display: block;
       text-align: start;
       margin-top: -10px !important;
-      color: red;
+      color: rgba(230, 13, 13, 0.686);
       font-size: 12px;
+
+    }
+
+    .result{
+    font-size: 1.5rem;
     }
 
     .form-check{

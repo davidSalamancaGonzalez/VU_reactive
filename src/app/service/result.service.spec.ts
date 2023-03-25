@@ -10,12 +10,15 @@ describe('ResultService', () => {
     service = TestBed.inject(ResultService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+
 
   describe('calculate', () => {
-    it('should calculate the totalDiscount for Spain correctly', () => {
+    it('should be created', () => {
+      expect(service).toBeTruthy();
+    });
+
+
+    it('should calculate the totalDiscount for Spain, 3000 result', () => {
       const formValues = {
         taxBase: 30000,
         pensionPlan: 1500,
@@ -24,6 +27,17 @@ describe('ResultService', () => {
       };
       service.calculate(formValues);
       expect(service.totalDiscount).toBe(3000);
+    });
+
+    it('should calculate the totalDiscount for Spain, 3000 result', () => {
+      const formValues = {
+        taxBase: 50000,
+        pensionPlan: 1500,
+        pensionPlanComp: 8500,
+        inlineRadioOptions: 'ESP'
+      };
+      service.calculate(formValues);
+      expect(service.totalDiscount).toBe(3700);
     });
 
     it('should calculate the totalDiscount for Andorra correctly', () => {

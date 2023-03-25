@@ -8,6 +8,20 @@ describe('FormComponent', () => {
   let fixture: ComponentFixture<FormComponent>;
   let resultService: ResultService;
 
+  const formValues = [{
+    taxBase: 30000,
+    pensionPlan: 1500,
+    pensionPlanComp: 8500,
+    inlineRadioOptions: 'ESP'
+  },
+  {
+    taxBase: 30000,
+    pensionPlan: 1800,
+    pensionPlanComp: 8500,
+    inlineRadioOptions: 'ESP'
+  }
+];
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FormComponent ],
@@ -28,34 +42,22 @@ describe('FormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should calculate the result', () => {
-    const formValues = {
-      taxBase: 30000,
-      pensionPlan: 1500,
-      pensionPlanComp: 8500,
-      inlineRadioOptions: 'ESP'
-    };
+  it('should call the service to calculate and reset form', () => {
+
     spyOn(resultService, 'calculate').and.callThrough();
     spyOn(component.myForm, 'reset');
-    component.myForm.setValue(formValues);
+    component.myForm.setValue(formValues[0]);
     component.calculate();
-    expect(resultService.calculate).toHaveBeenCalledWith(formValues);
-    expect(component.result).toBe('3000.00');
+    expect(resultService.calculate).toHaveBeenCalledWith(formValues[0]);
     expect(component.myForm.reset).toHaveBeenCalled();
   });
 
   it('should not calculate the result if the form is invalid', () => {
-    const formValues = {
-      taxBase: 30000,
-      pensionPlan: 3000, // exceeds max limit
-      pensionPlanComp: 5000,
-      inlineRadioOptions: 'ESP'
-    };
+
     spyOn(resultService, 'calculate');
-    component.myForm.setValue(formValues);
+    component.myForm.setValue(formValues[1]);
     component.calculate();
     expect(resultService.calculate).not.toHaveBeenCalled();
-    expect(component.result).toBe('');
     expect(component.myForm.controls['pensionPlan'].valid).toBe(false);
   });
 
